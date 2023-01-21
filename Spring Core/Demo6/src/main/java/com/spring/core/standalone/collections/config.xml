@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:util="http://www.springframework.org/schema/util"
+xmlns:c="http://www.springframework.org/schema/c"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd
+">
+
+<context:annotation-config></context:annotation-config>
+
+<!-- Standalone List -->
+
+<util:list list-class="java.util.Vector" id ="mybestfriends">
+<value>Ayooshi</value>
+<value>Adrika</value>
+<value>Ishita</value>
+</util:list>
+
+
+
+<!-- Standalone List -->
+
+<util:map map-class="java.util.TreeMap" id ="f">
+<entry key="Java" value="450"/>
+<entry key="Java" value="450"/>
+<entry key="C" value="300"/>
+<entry key="SQL" value="850"/>
+</util:map>
+
+<bean class="com.spring.core.standalone.collections.Person" name="p1">
+	<property name="friends" ref="mybestfriends"/>
+	<property name="fees" ref="f"/>
+</bean>
+
+
+</beans>  
